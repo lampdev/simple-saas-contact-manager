@@ -25,7 +25,13 @@ docker run --rm \
 ./vendor/bin/sail up -d
 ```
 
-You can [configure a Bash alias](https://laravel.com/docs/8.x/sail#installing-composer-dependencies-for-existing-projects) to execute Sail commands with the alias:
+You can configure a Bash alias:
+
+```
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+```
+
+And execute Sail commands by simply typing `sail`:
 
 ```
 sail up -d
